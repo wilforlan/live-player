@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Shaka Player compiled library: -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/2.5.9/shaka-player.compiled.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/2.5.9/shaka-player.ui.js"></script>
+    <!-- Your application source: -->
+    <script src="app.js"></script>
+    <style>
+        .center { 
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+        }
+
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+        body{
+            background: #f2f2f2;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .search {
+            width: 100%;
+            position: relative;
+            display: flex;
+        }
+
+        .searchTerm {
+            width: 100%;
+            border: 3px solid #00B4CC;
+            border-right: none;
+            padding: 5px;
+            height: 20px;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+            color: #9DBFAF;
+            margin-top: 100px;
+        }
+
+        .searchTerm:focus{
+            color: #00B4CC;
+        }
+
+        .searchButton {
+            width: 150px;
+            height: 36px;
+            border: 1px solid #00B4CC;
+            background: #00B4CC;
+            text-align: center;
+            color: #fff;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 100px;
+        }
+
+        /*Resize the wrap to see the search bar change!*/
+        .wrap{
+            width: 30%;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+  </head>
+  
+  <body>
+    <div class="wrap">
+        <div class="search">
+           <input type="text" id="videoLinkInput" class="searchTerm" placeholder="Enter a video link to start!">
+           <button type="submit" class="searchButton" onclick="startPlaying()">
+             View Video
+          </button>
+        </div>
+     </div>
+      <div class="center">
+        <video id="video"
+        width="640"
+        poster="//files.slack.com/files-pri/T04KDQAB7-FQ2972117/image.png?pub_secret=a3e364729a"
+        controls autoplay></video>
+      </div>
+  </body>
+</html>
