@@ -21,8 +21,12 @@ function startPlaying() {
 }
 function initPlayer(manifestUri) {
   // Create a Player instance.
-  var video = document.getElementById('video');
-  var player = new shaka.Player(video);
+  let element = null
+  if(manifestUri.includes('.mp3')) { element = document.getElementById('audio'); document.getElementById('video').style.display = 'none' }
+  else { element = document.getElementById('video'); document.getElementById('audio').style.display = 'none' }
+  // var element = document.getElementById('audio');
+  element.style.display = 'block'
+  var player = new shaka.Player(element);
 
   // Attach player to the window to make it easy to access in the JS console.
   window.player = player;

@@ -69,17 +69,21 @@
   <body>
     <div class="wrap">
         <div class="search">
-           <input type="text" id="videoLinkInput" class="searchTerm" placeholder="Enter a video link to start!">
+           <input type="text" id="videoLinkInput" class="searchTerm" placeholder="Enter a link to start!">
            <button type="submit" class="searchButton" onclick="startPlaying()">
-             View Video
+             Play
           </button>
         </div>
      </div>
       <div class="center">
-        <video id="video"
+        <video 
+        style="display: none;"
+        id="video"
         width="640"
         poster="//files.slack.com/files-pri/T04KDQAB7-FQ2972117/image.png?pub_secret=a3e364729a"
         controls autoplay></video>
+
+        <audio style="display: none;" id="audio" controls autoplay></audio>
       </div>
   </body>
 </html>
